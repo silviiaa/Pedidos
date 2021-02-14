@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo pedido{% endblock %}
+
+{% block body %}
+    <h1>Crear nuevo pedido</h1>
+
+    {{ include('pedido/_form.html.twig') }}
+
+    <a href="{{ path('pedido_index') }}" class="volver">Volver a la lista</a>
+{% endblock %}

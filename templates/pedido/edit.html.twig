@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar pedido{% endblock %}
+
+{% block body %}
+    <h1>Editar pedido</h1>
+
+    {{ include('pedido/_form.html.twig', {'button_label': 'Guardar cambios'}) }}
+
+    <a href="{{ path('pedido_index') }}" class="volver">Volver a la lista</a>
+
+    {{ include('pedido/_delete_form.html.twig') }}
+{% endblock %}

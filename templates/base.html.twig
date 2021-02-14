@@ -1,0 +1,23 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Aplicación de pedidos{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        {% block stylesheet %}{% endblock %}
+    </head>
+    <body>
+        {{ include('cabecera.html.twig') }}
+    {% block body %}
+       <header>
+       {% block header %}
+          
+          <hr>
+       {% endblock %}
+       </header>
+       {% block contenido %}
+       {% endblock %}
+    {% endblock %}
+   </body>
+</html>

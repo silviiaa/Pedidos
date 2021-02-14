@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pedido{% endblock %}
+
+{% block body %}
+    <h1>Pedido</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Código del pedido</th>
+                <td>{{ pedido.codPed }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ pedido.fecha ? pedido.fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Enviado</th>
+                <td>{{ pedido.enviado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pedido_index') }}" class="volver">Volver a la lista</a>
+
+    <a href="{{ path('pedido_edit', {'codPed': pedido.codPed}) }}" class="editar">Editar</a>
+
+    {{ include('pedido/_delete_form.html.twig') }}
+{% endblock %}

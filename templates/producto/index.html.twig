@@ -1,0 +1,41 @@
+{# templates/productos.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}Lista de productos{% endblock %}
+{% block contenido %}
+<h1>Lista de productos</h1>
+<table>
+   <tr>
+       <th>Nombre</th>
+       <th>Descripción</th>
+       <th>Stock</th>
+       <th>Peso</th>
+       <th>Comprar</th>
+    </tr>
+   {% for prod in productos %}
+        <tr>
+            <td>{{ prod.nombre }}</td>
+            <td>{{ prod.descripcion }}</td>
+            <td>{{ prod.stock }}</td>
+            <td>{{ prod.peso }}</td>
+            <td>
+                <form action="{{path('anadir')}}" method='POST'>
+                    <input name='unidades' type='number' min='1' value='1'>
+                    <td><input type='submit' value='Comprar'></td>
+                    <input name='cod' type='hidden' value={{prod.codProd}}>
+                </form>
+            </td>
+            
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="6">No hay productos</td>
+        </tr>
+    {% endfor %}
+
+        </tr>
+  
+</table>
+{% if app.user.username == 'admin' %}
+    <a href="{{ path('producto_new') }}" class="nueva">Crear nuevo producto</a>
+{% endif %}
+{% endblock %}

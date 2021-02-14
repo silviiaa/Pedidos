@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PedidoProducto index{% endblock %}
+
+{% block body %}
+    <h1>PedidoProducto index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CodPedProd</th>
+                <th>Unidades</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pedido_producto in pedido_productos %}
+            <tr>
+                <td>{{ pedido_producto.codPedProd }}</td>
+                <td>{{ pedido_producto.unidades }}</td>
+                <td>
+                    <a href="{{ path('pedido_producto_show', {'codPedProd': pedido_producto.codPedProd}) }}">show</a>
+                    <a href="{{ path('pedido_producto_edit', {'codPedProd': pedido_producto.codPedProd}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pedido_producto_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de categorías{% endblock %}
+
+{% block body %}
+    <h1>Lista de categorías</h1>
+
+    <table class="table">
+        <ul>
+            {% for cat in categorias %}
+                <li class="prod">
+                    {#{{cat.codCat}}#}
+                    <a href="{{path('productos',{'id':cat.codCat})}}" class="prod">
+                        {{cat.nombre}}
+                    </a>
+                    
+                    {% if app.user.username == 'admin' %}
+                        &nbsp; 
+                        <a href="{{ path('categoria_show', {'codCat': cat.codCat}) }}" class="mostrar">Mostrar</a>
+                        &nbsp; 
+                        <a href="{{ path('categoria_edit', {'codCat': cat.codCat}) }}" class="editar">Editar</a>
+                        
+                    {% endif %}
+                </li>
+                {% else %}
+                <li>
+                    <td colspan="4">No hay categorías</td>
+                </li>
+        </ul>
+            {% endfor %}
+    </table>
+    {% if app.user.username == 'admin' %}
+        <a href="{{ path('categoria_new') }}" class="nueva">Crear una nueva categoría</a>
+    {% endif %}   
+{% endblock %}

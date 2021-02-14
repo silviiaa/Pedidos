@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}Lista de restaurantes{% endblock %}
+{% block body %}
+    <h1>Lista de restaurantes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código del restaurante</th>
+                <th>Correo</th>
+                <th>País</th>
+                <th>Código postal</th>
+                <th>Ciudad</th>
+                <th>Dirección</th>
+                <th>Categorías</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for restaurante in restaurantes %}
+            <tr>
+                <td>{{ restaurante.codRes }}</td>
+                <td>{{ restaurante.correo }}</td>
+                <td>{{ restaurante.pais }}</td>
+                <td>{{ restaurante.cp }}</td>
+                <td>{{ restaurante.ciudad }}</td>
+                <td>{{ restaurante.direccion }}</td>
+                <td><a href="{{path('categorias',{'id':restaurante.codRes})}}">Categorías</a></td>
+                {% if app.user.username == 'admin' %}
+                    <td>
+                        <a href="{{ path('restaurante_edit', {'codRes': restaurante.codRes}) }}" class="editar">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('restaurante_delete',{'codRes':restaurante.codRes}) }}" class="borrar">Borrar </a>
+                    </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">No hay restaurantes</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+    {% if app.user.username == 'admin' %}
+        <a href="{{ path('restaurante_new') }}" class="nueva">Crear nuevo restaurante</a>
+    {% endif %}
+{% endblock %}

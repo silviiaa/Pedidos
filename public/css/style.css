@@ -1,0 +1,175 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    background-color: rgb(173, 202, 207);
+    font-size: 1rem;
+}
+
+form{
+    display: inline;
+}
+
+.register{
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    width: 35rem;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 5rem;
+    background-color: rgb(226, 152, 130);
+}
+
+label{
+    display: block;
+    min-height: 2rem;
+    margin-top: 0.5rem;
+}
+
+.login{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    border: 3px solid white;
+    background-color: rgba(255, 255, 255, 0.582);
+    margin-right: 50rem;
+    margin-left: 50rem;
+    margin-top: 5rem;
+    width: 30rem;
+}
+
+input[type=text], input[type=password] {
+    width: 15rem;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid  rgba(204, 204, 204);
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: rgb(224, 165, 147);
+    color: cornsilk;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+button {
+    background-color:  rgb(138, 199, 199);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15rem;
+}
+  
+button:hover {
+    opacity: 0.8;
+}
+
+.menu{
+    float: right;
+    background-color: rgb(224, 165, 147);
+    color: cornsilk;
+    padding: 0.5rem;
+    border: 1px solid;
+    cursor: pointer;
+    width: 25rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+h1{
+    text-align: center;
+    margin: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+table{
+    margin: auto;
+    text-align: center;
+    background-color: rgb(226, 152, 130);
+    width: 50%;
+}
+td, th {     
+    padding: 0.2rem;
+    width: 15rem;
+    border:1.5px solid rgb(224, 133, 105);
+}
+
+thead{
+    background-color: rgb(197, 181, 168);
+}
+
+ul, li{
+    list-style: none;
+    margin-bottom: 1rem;
+    margin-left: 12rem;
+}
+
+p{
+    text-align: center;
+    font-weight:bolder;
+    font-size: 1.5rem;
+}
+.ped{
+    margin-top: 1rem;
+    margin-left: 30rem;
+    color: cornsilk;
+}
+
+a{
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    
+}
+
+.mostrar {
+    background-color: rgb(224, 165, 147);
+    color: wheat;
+    border: 1px solid wheat;
+    padding: 0.3rem;
+    width: 5rem;
+}
+.editar{
+    background-color: rgb(224, 165, 147);
+    color:wheat;
+    border: 1px solid wheat;
+    padding: 0.3rem;
+    width: 5rem;
+}
+img {
+    width: auto;
+    height: auto;
+}
+
+.borrar{
+    background-color: rgb(224, 165, 147);
+    color:wheat;
+    border: 1px solid wheat;
+    padding: 0.3rem;
+    width: 5rem;
+}
+
+.nueva{
+    margin-left: 26.5rem;
+    background-color: rgba(224, 165, 147, 0.651);
+    color: whitesmoke;
+    border: 1px solid wheat;
+    padding: 0.3rem;
+    width: 15rem;
+    margin-top: 1rem;
+}
+
+.volver{
+    margin-top: 1rem;
+    margin-left: 30rem;
+    color: cornsilk;
+}
